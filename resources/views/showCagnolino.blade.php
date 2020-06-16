@@ -2,13 +2,14 @@
 @section('content')
 <div class="cagnolino">
   <h1>Il nostro cagnolino:</h1>
+  <ul>
+    <li><b>Nome:</b> {{$cagnolino['nome']}}</li>
+    <li><b>Tipo:</b> {{$cagnolino['tipo']}}</li>
+    <li><b>Peso:</b> {{$cagnolino['peso']}}</li>
+    <li><b>Altezza:</b> {{$cagnolino['altezza']}}</li>
+  </ul>
 
-    {{-- @foreach ($allCagnolini as $cagnolino)
-        <td>{{$cagnolino["nome"]}}</td>
-        <td>{{$cagnolino["tipo"]}}</td>
-        <td>{{$cagnolino["peso"]}}kg</td>
-        <td>{{$cagnolino["altezza"]}}cm</td>
-    @endforeach --}}
+
 
 </div>
 

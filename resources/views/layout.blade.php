@@ -14,7 +14,7 @@
       <div class="site">
 
         <header>
-          @include('header');
+          @include('header')
         </header>
 
         <main>

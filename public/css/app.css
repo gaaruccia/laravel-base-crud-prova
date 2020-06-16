@@ -8,11 +8,63 @@ body {
   background-color: lightblue;
 }
 
+.site {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 80px;
+  width: 100vw;
+  border-bottom: 1px solid black;
+}
+
+header h1 {
+  text-align: center;
+}
+
+main {
+  height: calc(100vh - 160px);
+}
+
+footer {
+  height: 80px;
+  border-top: 1px solid black;
+}
+
+footer span {
+  font-size: 12px;
+}
+
+.allCagnolini {
+  width: 400px;
+  margin: 20px auto;
+}
+
+.allCagnolini h1 {
+  text-align: center;
+}
+
 .allCagnolini table {
+  margin: 20px auto;
+}
+
+.allCagnolini table tr td {
+  padding: 10px;
   border: 1px solid black;
 }
 
-.allCagnolini table td {
-  border: 1px solid black;
+.cagnolino {
+  width: 400px;
+  margin: 20px auto;
+}
+
+.cagnolino h1 {
+  text-align: center;
+}
+
+.cagnolino li {
+  list-style-type: none;
+  text-align: center;
 }
 
