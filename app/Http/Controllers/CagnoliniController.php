@@ -8,11 +8,11 @@ class CagnoliniController extends Controller
 {
     public function index(){
         $allCagnolini = Cagnolini_model::all();
-      return view('index', compact('allCagnolini'));
+      return view('esseri.cagnolini.homeCagnolini', compact('allCagnolini'));
     }
 
     public function showCagnolino($id){
         $cagnolino = Cagnolini_model::findOrFail($id);
-      return view('showCagnolino', compact('cagnolino'));
+      return view('esseri.cagnolini.showCagnolino', compact('cagnolino'));
     }
 }

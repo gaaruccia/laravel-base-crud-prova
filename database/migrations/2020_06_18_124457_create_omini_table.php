@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCagnoliniTable extends Migration
+class CreateOminiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,19 @@ class CreateCagnoliniTable extends Migration
      */
     public function up()
     {
-        Schema::create('cagnolini', function (Blueprint $table) {
+        Schema::create('omini', function (Blueprint $table) {
             $table->id();
 
             $table->string('nome');
-            $table->string('tipo');
+            $table->string('cognome');
+            $table->integer('eta');
+            $table->string('indirizzo');
+            $table->string('capelli');
+            $table->string('occhi');
             $table->integer('altezza');
             $table->integer('peso');
+            $table->string('sesso');
+
             $table->timestamps();
         });
     }
@@ -31,6 +37,6 @@ class CreateCagnoliniTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cagnolini');
+        Schema::dropIfExists('omini');
     }
 }

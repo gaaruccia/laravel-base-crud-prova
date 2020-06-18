@@ -7,14 +7,12 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="/css/app.css">
         <title>Laravel</title>
-
-
     </head>
     <body>
       <div class="site">
 
         <header>
-          @include('header')
+          @include('components.header')
         </header>
 
         <main>
@@ -22,7 +20,7 @@
         </main>
 
         <footer>
-          @include('footer')
+          @include('components.footer')
         </footer>
       </div>
     </body>

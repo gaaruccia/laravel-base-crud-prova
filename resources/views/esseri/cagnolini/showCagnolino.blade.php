@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.cagnoliniLayout')
 @section('content')
 <div class="cagnolino">
   <h1>Il nostro cagnolino:</h1>
