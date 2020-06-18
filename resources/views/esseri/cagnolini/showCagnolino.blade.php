@@ -8,7 +8,8 @@
     <li><b>Peso:</b> {{$cagnolino['peso']}}</li>
     <li><b>Altezza:</b> {{$cagnolino['altezza']}}</li>
   </ul>
-
+  <a href="{{route('editCagnolino',$cagnolino['id'])}}">Modifica</a>
+  <a href="{{route('deleteCagnolino',$cagnolino['id'])}}">Elimina</a>
 
 
 </div>

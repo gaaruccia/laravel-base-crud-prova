@@ -4,7 +4,8 @@
   <h1>I nostri cagnolini:</h1>
   <table>
     <tbody>
-    @foreach ($allCagnolini as $cagnolino)
+      <a href="{{route('createCagnolino')}}">Crea nuovo Cagnolino</a>
+    @foreach ($cagnolini as $cagnolino)
       <tr>
         <td>{{$cagnolino["nome"]}}</td>
         <td><a href="{{route('showCagnolino', $cagnolino["id"])}}">Vedi</a></td>
