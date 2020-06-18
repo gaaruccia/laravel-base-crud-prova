@@ -1,16 +1,15 @@
 @extends('layouts.ominiLayout')
 @section('content')
 <div class="allOmini">
-  <h1>I nostri cagnolini:</h1>
+  <h1>I nostri omini:</h1>
   <table>
     <tbody>
-    @foreach ($allCagnolini as $cagnolino)
+      <a href="{{route('createOmino')}}">Crea nuovo Omino</a>
+    @foreach ($omini as $omino)
       <tr>
-        <td>{{$cagnolino["nome"]}}</td>
-        <td>{{$cagnolino["tipo"]}}</td>
-        <td>{{$cagnolino["peso"]}}kg</td>
-        <td>{{$cagnolino["altezza"]}}cm</td>
-        <td><a href="{{route('showCagnolino', $cagnolino["id"])}}">Vedi</a></td>
+        <td>{{$omino["nome"]}}</td>
+        <td>{{$omino["cognome"]}}</td>
+        <td><a href="{{route('showOmino', $omino["id"])}}">Info</a></td>
       </tr>
     @endforeach
     </tbody>
