@@ -1,4 +1,4 @@
-@extends('layouts.ominiLayout')
+@extends('layouts.layout')
 @section('content')
 <div class="omino">
   <h1>Il nostro omino:</h1>

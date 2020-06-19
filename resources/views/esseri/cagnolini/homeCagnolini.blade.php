@@ -1,14 +1,20 @@
-@extends('layouts.cagnoliniLayout')
+@extends('layouts.layout')
 @section('content')
-<div class="allCagnolini">
+<div class="homeCagnolini">
   <h1>I nostri cagnolini:</h1>
   <table>
     <tbody>
-      <a href="{{route('createCagnolino')}}">Crea nuovo Cagnolino</a>
+      <form action="{{route('createCagnolino')}}">
+          <input class="create-button" type="submit" value="Crea" />
+      </form>
     @foreach ($cagnolini as $cagnolino)
       <tr>
         <td>{{$cagnolino["nome"]}}</td>
-        <td><a href="{{route('showCagnolino', $cagnolino["id"])}}">Vedi</a></td>
+        <td>
+          <form action="{{route('showCagnolino', $cagnolino["id"])}}">
+            <input class="show-button" type="submit" value="->" />
+          </form>
+        </td>
       </tr>
     @endforeach
     </tbody>

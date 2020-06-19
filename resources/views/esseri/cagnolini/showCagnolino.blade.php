@@ -1,4 +1,4 @@
-@extends('layouts.cagnoliniLayout')
+@extends('layouts.layout')
 @section('content')
 <div class="cagnolino">
   <h1>Il nostro cagnolino:</h1>
@@ -8,8 +8,15 @@
     <li><b>Peso:</b> {{$cagnolino['peso']}}</li>
     <li><b>Altezza:</b> {{$cagnolino['altezza']}}</li>
   </ul>
-  <a href="{{route('editCagnolino',$cagnolino['id'])}}">Modifica</a>
-  <a href="{{route('deleteCagnolino',$cagnolino['id'])}}">Elimina</a>
+  <div class="buttons">
+    <form action="{{route('editCagnolino',$cagnolino['id'])}}" method="get">
+      <input class="edit-button" type="submit" value="Modifica">
+    </form>
+    <form action="{{route('deleteCagnolino',$cagnolino['id'])}}" method="get">
+      <input class="delete-button" type="submit" value="Elimina">
+    </form>
+  </div>
+
 
 
 </div>
