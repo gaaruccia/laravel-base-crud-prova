@@ -13,6 +13,9 @@
     <li><b>Altezza:</b> {{$cagnolino['altezza']}}</li>
   </ul>
   <div class="buttons">
+    <form action="{{route('homeCagnolini')}}" method="get">
+      <input class="show-button" type="submit" value="<-">
+    </form>
     <form action="{{route('editCagnolino',$cagnolino['id'])}}" method="get">
       <input class="edit-button" type="submit" value="Modifica">
     </form>

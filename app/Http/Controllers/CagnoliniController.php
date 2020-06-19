@@ -22,8 +22,8 @@ class CagnoliniController extends Controller
         $validateData = $request -> validate([
           'nome' => 'required|alpha',
           'tipo' => 'required|alpha',
-          'altezza' => 'required',
-          'peso' => 'required'
+          'altezza' => 'required|integer',
+          'peso' => 'required|integer'
         ]);
 
         $cagnolinoDaCreare = new Cagnolino_model;
@@ -47,8 +47,8 @@ class CagnoliniController extends Controller
         $validateData = $request -> validate([
           'nome' => 'required|alpha',
           'tipo' => 'required|alpha',
-          'altezza' => 'required',
-          'peso' => 'required'
+          'altezza' => 'required|integer',
+          'peso' => 'required|integer'
         ]);
         $cagnolinoDaModificare = Cagnolino_model::findOrFail($id);
 

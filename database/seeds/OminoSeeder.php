@@ -11,6 +11,6 @@ class OminoSeeder extends Seeder
      */
     public function run()
     {
-        factory(Omino_model::class,20)->create();
+        factory(Omino_model::class,50)->create();
     }
 }

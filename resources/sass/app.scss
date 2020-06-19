@@ -29,6 +29,9 @@ header{
   h1{
     // text-align: center;
   }
+  .icon-header{
+    margin-left: 10px;
+  }
   .icon-buttons{
     display: flex;
     justify-content: center;
@@ -41,6 +44,27 @@ header{
   }
 
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2eb9ce;
+  border: 12px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track {
+  background: #baeff2;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 main{
   min-height: calc(100% - 160px);
   h1{
@@ -52,7 +76,7 @@ main{
   height: calc(100vh - 160px);
   .mainContent{
     .container-esserini{
-      height: 420px;
+      max-height: 420px;
       width: 700px;
       display: flex;
       justify-content: space-between;
@@ -76,6 +100,12 @@ main{
     }
   }
 }
+.lista-esserini{
+    max-height: 420px;
+    overflow-y: scroll;
+}
+
+
 
 .homeCagnolini, .homeOmini,
 .cagnolino, .omino{

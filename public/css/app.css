@@ -29,6 +29,10 @@ header {
   align-items: center;
 }
 
+header .icon-header {
+  margin-left: 10px;
+}
+
 header .icon-buttons {
   display: flex;
   justify-content: center;
@@ -40,6 +44,32 @@ header .icon-buttons a {
 
 header .icon-buttons a:visited {
   color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2eb9ce;
+  border: 12px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #baeff2;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 main {
@@ -55,7 +85,7 @@ main h1 {
 }
 
 main .mainContent .container-esserini {
-  height: 420px;
+  max-height: 420px;
   width: 700px;
   display: flex;
   justify-content: space-between;
@@ -78,6 +108,11 @@ main .mainContent .container-esserini .index-esserino a img {
 main .mainContent .container-esserini .index-esserino a h3 {
   text-align: center;
   font-size: 28px;
+}
+
+.lista-esserini {
+  max-height: 420px;
+  overflow-y: scroll;
 }
 
 .homeCagnolini,

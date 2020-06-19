@@ -18,6 +18,9 @@
     <li><b>Sesso:</b> {{$omino['sesso']}}</li>
   </ul>
   <div class="buttons">
+    <form action="{{route('homeOmini')}}" method="get">
+      <input class="show-button" type="submit" value="<-">
+    </form>
     <form action="{{route('editOmino',$omino['id'])}}" method="get">
       <input class="edit-button" type="submit" value="Modifica">
     </form>

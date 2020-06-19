@@ -5,24 +5,26 @@
   @if (session('success'))
     <h5>{{session('success')}}</h5>
   @endif
-  <table>
-    <tbody>
-      <form action="{{route('createOmino')}}">
-          <input class="create-button" type="submit" value="Crea" />
-      </form>
-    @foreach ($omini as $omino)
-      <tr>
-        <td>{{$omino["nome"]}}</td>
-        <td>{{$omino["cognome"]}}</td>
-        <td>
-          <form action="{{route('showOmino', $omino["id"])}}">
-            <input class="show-button" type="submit" value="->" />
-          </form>
-        </td>
-      </tr>
-    @endforeach
-    </tbody>
-  </table>
+  <form action="{{route('createOmino')}}">
+    <input class="create-button" type="submit" value="Crea" />
+  </form>
+  <div class="lista-esserini">
+    <table>
+      <tbody>
+        @foreach ($omini as $omino)
+          <tr>
+            <td>{{$omino["nome"]}}</td>
+            <td>{{$omino["cognome"]}}</td>
+            <td>
+              <form action="{{route('showOmino', $omino["id"])}}">
+                <input class="show-button" type="submit" value="->" />
+              </form>
+            </td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
 </div>
 
 @endsection

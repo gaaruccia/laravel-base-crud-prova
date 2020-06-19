@@ -22,12 +22,12 @@ class OminiController extends Controller
       $validateData = $request -> validate([
         'nome' => 'required|alpha',
         'cognome' => 'required|alpha',
-        'eta' => 'required',
+        'eta' => 'required|integer',
         'indirizzo' => 'required',
         'capelli' => 'required|alpha',
         'occhi' => 'required|alpha',
-        'altezza' => 'required',
-        'peso' => 'required',
+        'altezza' => 'required|integer',
+        'peso' => 'required|integer',
         'sesso' => 'required|alpha|between:1,1'
       ]);
       $ominoDaCreare = new Omino_model;
@@ -56,12 +56,12 @@ class OminiController extends Controller
       $validateData = $request -> validate([
         'nome' => 'required|alpha',
         'cognome' => 'required|alpha',
-        'eta' => 'required',
+        'eta' => 'required|integer',
         'indirizzo' => 'required',
         'capelli' => 'required|alpha',
         'occhi' => 'required|alpha',
-        'altezza' => 'required',
-        'peso' => 'required',
+        'altezza' => 'required|integer',
+        'peso' => 'required|integer',
         'sesso' => 'required|alpha|between:1,1'
       ]);
       $ominoDaModificare = Omino_model::findOrFail($id);

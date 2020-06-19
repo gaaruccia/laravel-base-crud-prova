@@ -2,6 +2,15 @@
 @section('content')
 <div class="cagnolino">
   <h1>Modifica dati del cagnolino:</h1>
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors -> all() as $error)
+          <li>{{$error}}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
   <form class="" action="{{route('updateCagnolino',$cagnolino['id'])}}" method="post">
     @csrf
     @method('post')
