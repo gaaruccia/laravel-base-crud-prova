@@ -2,6 +2,9 @@
 @section('content')
 <div class="homeOmini">
   <h1>I nostri omini:</h1>
+  @if (session('success'))
+    <h5>{{session('success')}}</h5>
+  @endif
   <table>
     <tbody>
       <form action="{{route('createOmino')}}">

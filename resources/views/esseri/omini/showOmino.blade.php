@@ -2,6 +2,10 @@
 @section('content')
 <div class="omino">
   <h1>Il nostro omino:</h1>
+
+  @if (session('success'))
+    <h5>{{session('success')}}</h5>
+  @endif
   <ul>
     <li><b>Nome:</b> {{$omino['nome']}}</li>
     <li><b>Cognome:</b> {{$omino['cognome']}}</li>
@@ -21,8 +25,6 @@
       <input class="delete-button" type="submit" value="Elimina">
     </form>
   </div>
-
-
 </div>
 
 @endsection

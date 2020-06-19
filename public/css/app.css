@@ -30,7 +30,8 @@ header {
 }
 
 header .icon-buttons {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 header .icon-buttons a {
@@ -119,6 +120,15 @@ main .mainContent .container-esserini .index-esserino a h3 {
   width: 110px;
   display: flex;
   justify-content: space-between;
+}
+
+.homeCagnolini h5,
+.homeOmini h5,
+.cagnolino h5,
+.omino h5 {
+  color: green;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 footer {

@@ -30,7 +30,8 @@ header{
     // text-align: center;
   }
   .icon-buttons{
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     a{
       font-size: 25px;
       &:visited{
@@ -97,7 +98,11 @@ main{
       width: 110px;
       display: flex;
       justify-content: space-between;
-
+    }
+    h5{
+      color: green;
+      margin-bottom: 15px;
+      text-align: center;
     }
 
 }

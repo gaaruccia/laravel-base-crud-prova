@@ -6,15 +6,6 @@ use Illuminate\Http\Request;
 use App\Cagnolino_model;
 class CagnoliniController extends Controller
 {
-    // public function index(){
-    //     $allCagnolini = Cagnolino_model::all();
-    //   return view('esseri.cagnolini.homeCagnolini', compact('allCagnolini'));
-    // }
-    //
-    // public function showCagnolino($id){
-    //     $cagnolino = Cagnolino_model::findOrFail($id);
-    //   return view('esseri.cagnolini.showCagnolino', compact('cagnolino'));
-    // }
     public function index(){
         $cagnolini = Cagnolino_model::all();
       return view('esseri.cagnolini.homeCagnolini', compact('cagnolini'));
@@ -27,34 +18,51 @@ class CagnoliniController extends Controller
       return view('esseri.cagnolini.createCagnolino');
     }
     public function storeCagnolino(Request $request){
-        $cagnolino = $request -> all();
+        // $cagnolino = $request -> all();
+        $validateData = $request -> validate([
+          'nome' => 'required|alpha',
+          'tipo' => 'required|alpha',
+          'altezza' => 'required',
+          'peso' => 'required'
+        ]);
 
         $cagnolinoDaCreare = new Cagnolino_model;
-        $cagnolinoDaCreare -> nome = $cagnolino['nome'];
-        $cagnolinoDaCreare -> tipo = $cagnolino['tipo'];
-        $cagnolinoDaCreare -> altezza = $cagnolino['altezza'];
-        $cagnolinoDaCreare -> peso = $cagnolino['peso'];
+        $cagnolinoDaCreare -> nome = $validateData['nome'];
+        $cagnolinoDaCreare -> tipo = $validateData['tipo'];
+        $cagnolinoDaCreare -> altezza = $validateData['altezza'];
+        $cagnolinoDaCreare -> peso = $validateData['peso'];
 
         $cagnolinoDaCreare -> save();
 
-      return redirect() -> route('homeCagnolini');
+      return redirect() -> route('homeCagnolini')
+                        -> withSuccess('Cagnolino '.$cagnolinoDaCreare['nome'].
+                          ' creato con successo!');
     }
     public function editCagnolino($id){
         $cagnolino = Cagnolino_model::findOrFail($id);
       return view('esseri.cagnolini.editCagnolino', compact('cagnolino'));
     }
     public function updateCagnolino(Request $request, $id){
-        $cagnolino = $request -> all();
+        // $cagnolino = $request -> all();
+        $validateData = $request -> validate([
+          'nome' => 'required|alpha',
+          'tipo' => 'required|alpha',
+          'altezza' => 'required',
+          'peso' => 'required'
+        ]);
         $cagnolinoDaModificare = Cagnolino_model::findOrFail($id);
 
-        $cagnolinoDaModificare -> nome = $cagnolino['nome'];
-        $cagnolinoDaModificare -> tipo = $cagnolino['tipo'];
-        $cagnolinoDaModificare -> altezza = $cagnolino['altezza'];
-        $cagnolinoDaModificare -> peso = $cagnolino['peso'];
+        $cagnolinoDaModificare -> nome = $validateData['nome'];
+        $cagnolinoDaModificare -> tipo = $validateData['tipo'];
+        $cagnolinoDaModificare -> altezza = $validateData['altezza'];
+        $cagnolinoDaModificare -> peso = $validateData['peso'];
 
         $cagnolinoDaModificare -> save();
 
-      return redirect() -> route('showCagnolino',$cagnolinoDaModificare['id']);
+      return redirect()
+                -> route('showCagnolino',$cagnolinoDaModificare['id'])
+                -> withSuccess('Cagnolino '.$cagnolinoDaModificare['nome'].
+                    ' modificato con successo!');
     }
     public function deleteCagnolino($id){
         $cagnolino = Cagnolino_model::findOrFail($id);

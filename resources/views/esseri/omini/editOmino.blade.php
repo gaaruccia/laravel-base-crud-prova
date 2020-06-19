@@ -17,9 +17,7 @@
       <li><b>Sesso:</b><input type="text" name="sesso" value="{{$omino['sesso']}}"></li>
     </ul>
     <button type="submit" name="submit">Modifica</button>
-</form>
-
-
+  </form>
 </div>
 
 @endsection
