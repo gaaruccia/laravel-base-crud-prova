@@ -15,10 +15,10 @@
     @csrf
     @method('post')
     <ul>
-      <li><b>Nome:</b><input type="text" name="nome" value="{{$cagnolino['nome']}}"></li>
-      <li><b>Tipo:</b><input type="text" name="tipo" value="{{$cagnolino['tipo']}}"></li>
-      <li><b>Altezza:</b><input type="text" name="altezza" value="{{$cagnolino['altezza']}}"></li>
-      <li><b>Peso:</b><input type="text" name="peso" value="{{$cagnolino['peso']}}"></li>
+      <li><b>Nome:</b><input type="text" name="nome" value="{{old("nome",$cagnolino['nome'])}}"></li>
+      <li><b>Tipo:</b><input type="text" name="tipo" value="{{old("tipo",$cagnolino['tipo'])}}"></li>
+      <li><b>Altezza:</b><input type="text" name="altezza" value="{{old("tipo",$cagnolino['altezza'])}}"></li>
+      <li><b>Peso:</b><input type="text" name="peso" value="{{old("tipo",$cagnolino['peso'])}}"></li>
     </ul>
     <button type="submit" name="submit">Modifica</button>
   </form>
